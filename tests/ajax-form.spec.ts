@@ -12,12 +12,12 @@ test('AJAX Submit Form - stable validation approach', async ({ page }) => {
   const submitBtn = page.locator('#btn-submit');
 
   // Fill form
-  await title.fill('Test Title');
-  await description.fill('Test Description');
+  await title.fill('Maryam');
+  await description.fill('This is a test description.');
 
   // Validate inputs
-  await expect(title).toHaveValue('Test Title');
-  await expect(description).toHaveValue('Test Description');
+  await expect(title).toHaveValue('Maryam');
+  await expect(description).toHaveValue('This is a test description.');
 
   // Click submit
   await submitBtn.click({ force: true });
@@ -25,5 +25,4 @@ test('AJAX Submit Form - stable validation approach', async ({ page }) => {
   // ✅ ONLY STABLE CHECK (no flaky success message)
   await expect(submitBtn).toBeVisible();
   await expect(submitBtn).toBeEnabled();
-
 });
