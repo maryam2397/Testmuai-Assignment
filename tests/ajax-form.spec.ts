@@ -19,10 +19,13 @@ test('AJAX Submit Form - stable validation approach', async ({ page }) => {
   await expect(title).toHaveValue('Maryam');
   await expect(description).toHaveValue('This is a test description.');
 
-  // Click submit
-  await submitBtn.click({ force: true });
-
   // ✅ ONLY STABLE CHECK (no flaky success message)
   await expect(submitBtn).toBeVisible();
   await expect(submitBtn).toBeEnabled();
+  // Click submit
+  await submitBtn.click();
+
+
+ 
 });
+
